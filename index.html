@@ -16,5 +16,36 @@
 	</div>
 		<button id="orderButton">Place Order</button>
 		<script type="module" src="index.js"></script>
+	<script>
+(function () {
+  const logBox = document.createElement("pre");
+  logBox.style.position = "fixed";
+  logBox.style.bottom = "0";
+  logBox.style.left = "0";
+  logBox.style.width = "100%";
+  logBox.style.maxHeight = "30%";
+  logBox.style.overflow = "auto";
+  logBox.style.background = "rgba(0,0,0,0.7)";
+  logBox.style.color = "lime";
+  logBox.style.padding = "10px";
+  logBox.style.fontSize = "12px";
+  logBox.style.zIndex = "99999";
+  logBox.textContent = "Debug console:\n";
+  document.body.appendChild(logBox);
+
+  const oldLog = console.log;
+  const oldErr = console.error;
+
+  console.log = function (...msg) {
+    oldLog.apply(console, msg);
+    logBox.textContent += msg.join(" ") + "\n";
+  };
+
+  console.error = function (...msg) {
+    oldErr.apply(console, msg);
+    logBox.textContent += "ERROR: " + msg.join(" ") + "\n";
+  };
+})();
+</script>
 	</body>
 </html>
