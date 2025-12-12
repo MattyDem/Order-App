@@ -28,12 +28,12 @@ import { getDatabase, ref, push, set } from "https://www.gstatic.com/firebasejs/
 	const person = delName.value;
 	const address = delAddress.value;
 	
-	if(order, person, address === ''){
+	if(order === "" || person === "" || address === ""){
 	alert("field can't be Empty");
 	return;
 	};
 	const orderInfo = push(ref(db, "Order List"));
-	 set(orderInfo,{
+	 set(orderInfo, {
 		time: Date.now(),
 		order: order,
 		name: person,
