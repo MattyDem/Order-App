@@ -1,0 +1,32 @@
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	}
+.orderForm {
+	
+	}
+#title {
+	font-size: 90px;
+	}
+.inputDetail {
+	font-size: 35px;
+	margin-top: 10px;
+	}
+#orderName,
+#deliveryName,
+#deliveryAddress {
+	font-size: 42px;
+	width: 100%;
+	}
+#orderButton {
+	background-color: green;
+	color: white;
+	width: 210px;
+	height: 120px;
+	border: none;
+	border-radius: 50px;
+	font-size: 35px;
+	margin-top: 20px;
+	}
